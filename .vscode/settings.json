@@ -1,0 +1,14 @@
+{
+    "python.pythonPath": "venv\\Scripts\\python.exe",    // Adjust for Windows: "venv\\Scripts\\python.exe"
+    "python.linting.enabled": true,                      // Enable linting
+    "python.linting.pylintEnabled": true,                // Use Pylint for linting
+    "python.formatting.provider": "black",               // Use Black for formatting
+    "editor.formatOnSave": true,                         // Auto-format on save
+    "files.autoSave": "onFocusChange",                   // Save files when switching focus
+    "python.testing.pytestEnabled": true,                // Enable Pytest
+    "python.testing.pytestArgs": [
+        "tests"
+    ],              // Point Pytest to the "tests" folder
+    "python.testing.unittestEnabled": false,             // Disable Unittest
+    "python.testing.nosetestsEnabled": false             // Disable Nosetests
+}
