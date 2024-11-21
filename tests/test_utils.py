@@ -1,3 +1,7 @@
+"""
+Tests for utility functions.
+"""
+
 def test_placeholder():
     """
     A placeholder test to ensure pytest discovers tests.

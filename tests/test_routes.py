@@ -1,3 +1,7 @@
+"""
+Tests for application routes.
+"""
+
 def test_placeholder():
     """
     A placeholder test to ensure pytest discovers tests.
