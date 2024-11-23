@@ -1,41 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
 	console.log("JavaScript loaded!");
-});
 
-document.addEventListener("DOMContentLoaded", () => {
-	const tabs = document.querySelectorAll(".tab");
+	const container = document.getElementById("container");
+	const registerBtn = document.getElementById("register");
+	const loginBtn = document.getElementById("login");
+	const passwordInput = document.getElementById("password");
+	const togglePassword = document.getElementById("toggle-password");
 
-	tabs.forEach((tab) => {
-		tab.addEventListener("click", () => {
-			// Remove 'active' class from all tabs
-			tabs.forEach((t) => t.classList.remove("active"));
-
-			// Add 'active' class to the clicked tab
-			tab.classList.add("active");
+	// Ensure buttons exist before adding listeners
+	if (registerBtn) {
+		registerBtn.addEventListener("click", () => {
+			container.classList.add("active");
 		});
-	});
-});
-document.addEventListener("DOMContentLoaded", () => {
-	const tabs = document.querySelectorAll(".tab");
-	const underline = document.getElementById("underline");
+	}
 
-	tabs.forEach((tab) => {
-		tab.addEventListener("click", () => {
-			// Remove active class from all tabs
-			tabs.forEach((t) => t.classList.remove("active"));
-			tab.classList.add("active");
-
-			// Get the width and position of the clicked tab
-			const tabRect = tab.getBoundingClientRect();
-			const containerRect = tab.parentElement.getBoundingClientRect();
-
-			// Calculate the position and width for the underline
-			const width = tabRect.width;
-			const left = tabRect.left - containerRect.left;
-
-			// Apply the calculated width and position to the underline
-			underline.style.width = `${width}px`;
-			underline.style.left = `${left}px`;
+	if (loginBtn) {
+		loginBtn.addEventListener("click", () => {
+			container.classList.remove("active");
 		});
+	}
+
+	togglePassword.addEventListener("click", () => {
+		// Toggle input type between 'password' and 'text'
+		const isPassword = passwordInput.getAttribute("type") === "password";
+		passwordInput.setAttribute("type", isPassword ? "text" : "password");
+
+		// Toggle icon class between 'eye' and 'eye-slash'
+		togglePassword.classList.toggle("fa-eye");
+		togglePassword.classList.toggle("fa-eye-slash");
 	});
 });

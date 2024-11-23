@@ -3,43 +3,51 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Eco Transition</title>
-		<link rel="stylesheet" href="/static/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}" />
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+		<title>Login Page</title>
 	</head>
+
 	<body>
-		<div class="container d-flex justify-content-center align-items-center vh-100">
-			<div class="login-container shadow p-4 bg-white rounded">
-				<img src="{{ url_for('static', filename='images/bsu-logo.png') }}" alt="BatStateU Logo" class="bsu-logo mx-auto d-block mb-3" />
-				<h1 class="login-title text-center">Sign In</h1>
-				<p class="login-subtitle text-center">Welcome! Please enter your details.</p>
-				<form method="POST" action="{{ url_for('auth.login') }}">
-					<div class="mb-3">
-						<label for="email" class="form-label">Email</label>
-						<input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required />
-					</div>
-					<div class="mb-3">
-						<label for="password" class="form-label">Password</label>
-						<input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required />
-						<div class="form-check mt-2 text-end">
-							<input type="checkbox" class="form-check-input" id="showPassword" onclick="togglePasswordVisibility()" />
-							<label class="form-check-label" for="showPassword">Show password</label>
-						</div>
-					</div>
-					<div class="text-center">
-						<button type="submit" class="btn btn-primary w-100 mb-3">Sign In</button>
-						<div class="d-flex align-items-center justify-content-center mb-3">
-							<hr class="flex-grow-1" />
-							<span class="mx-2 text-muted">or</span>
-							<hr class="flex-grow-1" />
-						</div>
-						<button type="button" class="btn btn-secondary w-100" onclick="location.href='/guest';">Continue as Guest</button>
-					</div>
+		<div class="container" id="container">
+			<div class="sign-up">
+				<form>
+					<h1>Continue as Guest</h1>
+					<span>Enter your email to receive login credentials</span>
+					<input type="email" placeholder="Email" />
+					<button type="button">Send</button>
 				</form>
 			</div>
+			<div class="sign-in">
+				<form>
+					<h1>Sign In</h1>
+					<span>Please enter your login credentials</span>
+					<input type="email" placeholder="Email" />
+					<div class="input-container">
+						<input type="password" id="password" placeholder="Password" />
+						<i class="fa fa-eye-slash toggle-password" id="toggle-password"></i>
+					</div>
+					<button type="button">Sign In</button>
+				</form>
+			</div>
+			<div class="toggle-container">
+				<div class="toggle">
+					<div class="toggle-panel toggle-left">
+						<h1>Welcome!</h1>
+						<p>If you already have an account</p>
+						<button type="button" id="login">Sign In</button>
+					</div>
+					<div class="toggle-panel toggle-right">
+						<h1>Hello, EcoFriends!</h1>
+						<p>If you don't have an account</p>
+						<button type="button" id="register">Continue as Guest</button>
+					</div>
+				</div>
+			</div>
 		</div>
-
-		<script src="/static/js/bootstrap.bundle.min.js"></script>
+		<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 	</body>
 </html>

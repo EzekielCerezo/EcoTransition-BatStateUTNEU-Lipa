@@ -1,12 +1,19 @@
 /* Global Styles */
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #FFFFFF;
-    color: #000000;
-    height: 100vh;
-    width: 100vw;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
 }
 
 /* Header Styles */
@@ -73,207 +80,226 @@ body {
 }
 
 /* Login Page Styles */
-.login-container {
-    width: 100%;
-    max-width: 650px;
-    background-color: #E53935 !important;
-    border-radius: 25px !important;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5) !important;
-    color: white;
-    padding: 50px !important;
+.container {
+    background-color: #fff;
+    border-radius: 150px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
 }
 
-.bsu-logo {
-    width: 125px;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-.login-title {
-    font-size: 36px;
-    font-weight: bold;
-    margin: 0;
-}
-
-.login-subtitle {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.form-label {
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.form-control {
-    font-size: 16px;
-    font-weight: 500;
-    padding: 10px 15px;
-    background-color: transparent; 
-    color: #FFFFFF; 
-    border: 2px solid #FFFFFF; 
-    box-shadow: none;
-    outline: none; 
-}
-
-.form-control::placeholder {
-    color: #FFFFFF; 
-    opacity: .75; 
-}
-
-.form-check {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    margin-top: 10px !important;
-    margin-bottom: 20px;
-}
-
-.form-check-input {
-    width: 18px;
-    height: 18px;
-    margin-right: 5px;
-    cursor: pointer;
-}
-
-.form-check-label {
+.container p {
     font-size: 14px;
-    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 20px 0;
 }
 
-.btn-primary, .btn-secondary {
-    width: 100%; 
-    height: 55px;
-    background-color: #FFFFFF;
-    color: #E53935;
-    border: none;
-    border-radius: 50px;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 12px;
+.container span {
+    font-size: 12px;
+    margin-bottom: 15px;
+    display: block;
 }
 
-.btn-primary:hover, .btn-secondary:hover {
+.container button {
+    background-color: #a82d2d;
+    color: #fff;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.container button.hidden {
     background-color: transparent;
-    border: 2px solid #FFFFFF;
+    border-color: #fff;
 }
 
-.btn:focus {
+.container button:hover {
+    background-color: #8b2323;
+}
+
+.container form {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    height: 100%;
+}
+
+.container input {
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
     outline: none;
 }
 
-hr {
+.container input:focus {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+}
+
+.sign-up,
+.sign-in {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all .6s ease-in-out;
+}
+
+.sign-in {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.container.active .sign-in {
+    transform: translateX(100%);
+}
+
+.sign-up {
+    left: 0;
+    width: 50%;
+    z-index: 1;
+    opacity: 0;
+}
+
+.container.active .sign-up {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move .6s;
+}
+
+@keyframes move {
+    0%,
+    49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+    50%,
+    100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+/* Input container to position input and icon */
+.input-container {
+    position: relative; /* Ensures the icon is positioned relative to this container */
+    width: 100%; /* Matches the width of the input */
+}
+
+.input-container input {
+    width: 100%; /* Takes up the full width of the container */
+    padding-right: 40px; /* Add padding to make room for the icon */
+    box-sizing: border-box; /* Ensure padding doesn't affect total width */
+    background-color: #eee;
     border: none;
-    border-top: 2px solid #FFFFFF;
-    opacity: .75;
+    margin: 8px 0;
+    padding: 10px 40px 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    outline: none;
 }
 
-.mx-2.text-muted {
-    color: #FFFFFF !important;
-    font-size: 14px;
+.input-container input:focus {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
 }
 
-@media (max-width: 1439px) {
-    
-    .login-container {
-        width: 60%; /* Adjusted for width scaling */
-        max-width: 390px; /* Adjusted from 650px */
-        background-color: #E53935 !important;
-        border-radius: 20px !important; /* Adjusted from 25px */
-        box-shadow: 2.4px 2.4px 4px rgba(0, 0, 0, 0.5) !important; /* Adjusted */
-        color: white;
-        padding: 40px !important; /* Adjusted from 50px */
-    }
-    
-    .bsu-logo {
-        width: 75px; /* Adjusted from 125px */
-        height: auto;
-        margin-bottom: 16px; /* Adjusted from 20px */
-    }
-    
-    .login-title {
-        font-size: 28.8px; /* Adjusted from 36px */
-        font-weight: bold;
-        margin: 0;
-    }
-    
-    .login-subtitle {
-        font-size: 14.4px; /* Adjusted from 18px */
-        margin-bottom: 16px; /* Adjusted from 20px */
-    }
-    
-    .form-label {
-        font-size: 14.4px; /* Adjusted from 18px */
-        font-weight: 500;
-    }
-    
-    .form-control {
-        font-size: 12.8px; /* Adjusted from 16px */
-        font-weight: 500;
-        padding: 8px 12px; /* Adjusted from 10px 15px */
-        background-color: transparent;
-        color: #FFFFFF;
-        border: 1.6px solid #FFFFFF; /* Adjusted from 2px */
-        box-shadow: none;
-        outline: none;
-    }
-    
-    .form-control::placeholder {
-        color: #FFFFFF;
-        opacity: .75;
-    }
-    
-    .form-check {
-        display: flex;
-        justify-content: right;
-        align-items: center;
-        margin-top: 8px !important; /* Adjusted from 10px */
-        margin-bottom: 16px; /* Adjusted from 20px */
-    }
-    
-    .form-check-input {
-        width: 12px; /* Adjusted from 18px */
-        height: 12px; /* Adjusted from 18px */
-        margin-right: 4px; /* Adjusted from 5px */
-        cursor: pointer;
-    }
-    
-    .form-check-label {
-        font-size: 11.2px; /* Adjusted from 14px */
-        font-weight: 500;
-    }
-    
-    .btn-primary, .btn-secondary {
-        width: 60%; /* Adjusted for width scaling */
-        height: 44px; /* Adjusted from 55px */
-        background-color: #FFFFFF;
-        color: #E53935;
-        border: none;
-        border-radius: 40px; /* Adjusted from 50px */
-        font-size: 14.4px; /* Adjusted from 18px */
-        font-weight: bold;
-        padding: 9.6px; /* Adjusted from 12px */
-    }
-    
-    .btn-primary:hover, .btn-secondary:hover {
-        background-color: transparent;
-        border: 1.6px solid #FFFFFF; /* Adjusted from 2px */
-    }
-    
-    .btn:focus {
-        outline: none;
-    }
-    
-    hr {
-        border: none;
-        border-top: 1.6px solid #FFFFFF; /* Adjusted from 2px */
-        opacity: .75;
-    }
-    
-    .mx-2.text-muted {
-        color: #FFFFFF !important;
-        font-size: 11.2px; /* Adjusted from 14px */
-    }
-    
-
+/* Show Password Icon */
+.toggle-password {
+    position: absolute; /* Position relative to the input-container */
+    right: 15px; /* Align to the right edge */
+    top: 50%; /* Vertically align in the middle */
+    transform: translateY(-50%); /* Adjust for centering */
+    font-size: 12px;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
+
+.toggle-password:hover {
+    color: #333; /* Slight color change on hover for interactivity */
+}
+
+
+/* Corrected 'toggle-container' */
+.toggle-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 150px;
+    z-index: 1000;
+    transition: all .6s ease-in-out;
+}
+
+.container.active .toggle-container {
+    transform: translateX(-100%);
+}
+
+.toggle {
+    background-color: #a82d2d;
+    height: 100%;
+    background: linear-gradient(to right, #c05c5c, #a82d2d);
+    color: #fff;
+    position: relative;
+    left: -100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.container.active .toggle {
+    transform: translateX(50%);
+}
+
+.toggle-panel {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-left {
+    transform: translateX(-200%);
+}
+
+.container.active .toggle-left {
+    transform: translateX(0);
+}
+
+.toggle-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.active .toggle-right {
+    transform: translateX(200%);
+}  
