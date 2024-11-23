@@ -161,8 +161,6 @@
 
 .document-list, .document-details {
     overflow-y: scroll;
-    scrollbar-width: thin;
-    scrollbar-color: #e53935 rgba(0, 0, 0, 0.1);
 }
 
 .document-list::-webkit-scrollbar, .document-details::-webkit-scrollbar {
@@ -170,7 +168,7 @@
 }
 
 .document-list::-webkit-scrollbar-thumb, .document-details::-webkit-scrollbar-thumb {
-    background: #e53935;
+    background: rgba(0, 0, 0, 0.1);
     border-radius: 4px;
 }
 

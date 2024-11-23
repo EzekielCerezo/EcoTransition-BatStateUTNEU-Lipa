@@ -1,6 +1,6 @@
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/document_list.css') }}" />
-{% endblock %}
+{% endblock %} {% include "document_modal.html" %}
 
 <div class="section-header">
 	<h2 class="section-title">Documents</h2>
@@ -21,4 +21,4 @@
 	<span class="material-symbols-outlined filter-icon">filter_list</span>
 </div>
 
-<div class="document-entries">{% include "document_container.html" %}</div>
+<div class="document-entries"></div>

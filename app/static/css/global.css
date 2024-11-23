@@ -172,3 +172,108 @@ hr {
     color: #FFFFFF !important;
     font-size: 14px;
 }
+
+@media (max-width: 1439px) {
+    
+    .login-container {
+        width: 53.33%; /* Reduced from 100% */
+        max-width: 346.66px; /* Reduced from 650px */
+        background-color: #E53935 !important;
+        border-radius: 13.33px !important; /* Reduced from 25px */
+        box-shadow: 1.6px 1.6px 2.67px rgba(0, 0, 0, 0.5) !important; /* Reduced */
+        color: white;
+        padding: 26.67px !important; /* Reduced from 50px */
+    }
+    
+    .bsu-logo {
+        width: 66.66px; /* Reduced from 125px */
+        height: auto;
+        margin-bottom: 10.67px; /* Reduced from 20px */
+    }
+    
+    .login-title {
+        font-size: 19.2px; /* Reduced from 36px */
+        font-weight: bold;
+        margin: 0;
+    }
+    
+    .login-subtitle {
+        font-size: 9.6px; /* Reduced from 18px */
+        margin-bottom: 10.67px; /* Reduced from 20px */
+    }
+    
+    .form-label {
+        font-size: 9.6px; /* Reduced from 18px */
+        font-weight: 500;
+    }
+    
+    .form-control {
+        font-size: 8.53px; /* Reduced from 16px */
+        font-weight: 500;
+        padding: 5.33px 8px; /* Reduced from 10px 15px */
+        background-color: transparent;
+        color: #FFFFFF;
+        border: 1.07px solid #FFFFFF; /* Reduced from 2px */
+        box-shadow: none;
+        outline: none;
+    }
+    
+    .form-control::placeholder {
+        color: #FFFFFF;
+        opacity: .75;
+    }
+    
+    .form-check {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        margin-top: 5.33px !important; /* Reduced from 10px */
+        margin-bottom: 10.67px; /* Reduced from 20px */
+    }
+    
+    .form-check-input {
+        width: 9.6px; /* Reduced from 18px */
+        height: 9.6px; /* Reduced from 18px */
+        margin-right: 2.67px; /* Reduced from 5px */
+        cursor: pointer;
+    }
+    
+    .form-check-label {
+        font-size: 7.47px; /* Reduced from 14px */
+        font-weight: 500;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 53.33%; /* Reduced from 100% */
+        height: 29.33px; /* Reduced from 55px */
+        background-color: #FFFFFF;
+        color: #E53935;
+        border: none;
+        border-radius: 26.67px; /* Reduced from 50px */
+        font-size: 9.6px; /* Reduced from 18px */
+        font-weight: bold;
+        padding: 6.4px; /* Reduced from 12px */
+    }
+    
+    .btn-primary:hover, .btn-secondary:hover {
+        background-color: transparent;
+        border: 1.07px solid #FFFFFF; /* Reduced from 2px */
+    }
+    
+    .btn:focus {
+        outline: none;
+    }
+    
+    hr {
+        border: none;
+        border-top: 1.07px solid #FFFFFF; /* Reduced from 2px */
+        opacity: .75;
+    }
+    
+    .mx-2.text-muted {
+        color: #FFFFFF !important;
+        font-size: 7.47px; /* Reduced from 14px */
+    }
+
+
+}
