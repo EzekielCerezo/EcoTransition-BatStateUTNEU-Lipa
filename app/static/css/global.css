@@ -1,0 +1,174 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFFFFF;
+    color: #000000;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+.header {
+    width: 100%;
+    height: 150px;
+    position: relative;
+    background: 
+        linear-gradient(rgba(229, 57, 53, 0.75), rgba(229, 57, 53, 0.75)), 
+        url('/static/images/header-background.svg'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.header-contents {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.header-logo {
+    height: 125px;
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    transform: translateY(-50%); 
+}
+
+.header-contents h1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.header-contents .subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: -5px;
+}
+
+.header-contents .campus {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.header-contents .portal {
+    font-size: 22px;
+    font-weight: 600; 
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* Login Page Styles */
+.login-container {
+    width: 100%;
+    max-width: 650px;
+    background-color: #E53935 !important;
+    border-radius: 25px !important;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5) !important;
+    color: white;
+    padding: 50px !important;
+}
+
+.bsu-logo {
+    width: 125px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.login-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.login-subtitle {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.form-control {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 15px;
+    background-color: transparent; 
+    color: #FFFFFF; 
+    border: 2px solid #FFFFFF; 
+    box-shadow: none;
+    outline: none; 
+}
+
+.form-control::placeholder {
+    color: #FFFFFF; 
+    opacity: .75; 
+}
+
+.form-check {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-top: 10px !important;
+    margin-bottom: 20px;
+}
+
+.form-check-input {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.form-check-label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btn-primary, .btn-secondary {
+    width: 100%; 
+    height: 55px;
+    background-color: #FFFFFF;
+    color: #E53935;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    background-color: transparent;
+    border: 2px solid #FFFFFF;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #FFFFFF;
+    opacity: .75;
+}
+
+.mx-2.text-muted {
+    color: #FFFFFF !important;
+    font-size: 14px;
+}

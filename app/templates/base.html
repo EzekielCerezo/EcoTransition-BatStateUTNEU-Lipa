@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Eco Transition</title>
+		<link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}" />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=swap" />
+		{% block head %}{% endblock %}
+	</head>
+	<body>
+		{% include "header.html" %} {% block content %}{% endblock %}
+		<script src="/static/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>

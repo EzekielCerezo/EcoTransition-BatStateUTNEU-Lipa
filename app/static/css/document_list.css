@@ -1,0 +1,160 @@
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.document-title {
+    font-size: 34px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.add-new-button {
+    width: 100px;
+    height: 35px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: #E53935;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.add-new-button:hover,
+.add-new-button:active,
+.add-new-button:focus,
+.add-new-button:focus-visible {
+    background-color: #FFFFFF;
+    color: #E53935;
+    border: none;
+    outline: none;
+    box-shadow: none !important; 
+}
+
+.document-tabs {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.tab {
+    position: relative; 
+    background: none;
+    border: none;
+    margin-right: 50px;
+    padding-bottom: 5px;
+    color: rgba(0, 0, 0, 0.5);
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.tab:hover,
+.tab:active,
+.tab:focus,
+.tab:focus-visible {
+    color: #E53935;
+    border: none;
+    outline: none;
+}
+
+.tab::after {
+    transition: all 0.2s ease-in-out;
+}
+
+.tab:hover::after, 
+.tab:active::after,
+.tab:focus::after,
+.tab:focus-visible::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: -2px;
+    height: 2px;
+    background-color: #E53935;
+    z-index: 2;
+    transition: background-color 0.3s;
+}
+
+.line-separator {
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 25px;
+}
+
+.search-bar {
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    padding: 0 10px;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.search-icon {
+    color: rgba(0, 0, 0, 0.50);
+    font-size: 25px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0 10px;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.25);
+}
+
+::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+
+.filter-icon {
+    color: #E53935;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.filter-icon:hover {
+    transform: scale(1.1); 
+    transition: all 0.3s ease;
+}
+.filter-icon:active {
+    transform: scale(0.95); 
+}
+
+.search-bar input:focus {
+    color: #000000;
+}
+
+.document-entries {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.no-documents {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.5)
+}
+
+

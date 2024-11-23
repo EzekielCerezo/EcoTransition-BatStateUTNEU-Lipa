@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/guest.css') }}" />
+{% endblock %} {% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<!-- Sidebar -->
+		<div class="sidebar">
+			<div class="profile-menu-container">
+				<div class="guest-profile-container">
+					<div class="guest-pic">
+						<span class="material-symbols-outlined profile-icon">person</span>
+					</div>
+					<div class="guest-info">
+						<div class="guest-name">Supreme Student Council - Lipa Campus</div>
+						<div class="guest-id">GuestUserID</div>
+					</div>
+				</div>
+				<div class="menu">
+					<span class="material-symbols-outlined document-icon">draft</span>
+					<span class="menu-label">Documents</span>
+				</div>
+			</div>
+			<div class="buttons-container">
+				<button class="settings-button">
+					<span class="material-symbols-outlined settings-icon">settings</span>
+				</button>
+				<button class="signout-button">SIGN OUT</button>
+			</div>
+		</div>
+
+		<!-- Document List -->
+		<div class="document-list">{% include "document_list.html" %}</div>
+
+		<div class="document-details">
+			<!-- Document details content will be here -->
+		</div>
+	</div>
+</div>
+{% endblock %}

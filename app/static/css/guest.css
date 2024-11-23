@@ -1,0 +1,187 @@
+.container-fluid > .row {
+    display: flex;
+    flex-wrap: nowrap;
+    height: calc(100vh - 150px);
+    gap: 0;
+}
+
+.sidebar {
+    flex: 0 0 22.5%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.guest-profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.guest-pic {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .15);
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.profile-icon {
+    font-size: 75px;
+    color: rgba(0, 0, 0, .25);
+}
+
+.profile-pic-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.guest-info {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+.guest-name {
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.guest-id {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    color: #E53935;
+    margin-top: -5px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    height: 55px;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.menu:hover,
+.menu:active,
+.menu:focus,
+.menu:focus-visible {
+    background-color: #E53935;
+}
+
+.document-icon {
+    font-size: 35px;
+    margin-right: 15px;
+}
+
+.menu-label {
+    font-size: 20px;  
+    font-weight: 500;
+}
+
+.buttons-container {
+    display: flex;
+    align-items: center; 
+    justify-content: start; 
+    width: 100%; 
+}
+
+.settings-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    color: #E53935;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.settings-icon {
+    font-size: 30px;
+}
+
+.signout-button {
+    height: 50px;
+    flex-grow: 1;
+    border-radius: 35px;
+    background-color: #E53935;
+    color: #FFFFFF;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.settings-button:hover,
+.setting-button:active,
+.settings-button:focus,
+.settings-button:focus-visible {
+    background-color: #E53935; 
+    color: #FFFFFF;
+    border: none;
+    outline: none;
+}
+
+.signout-button:hover,
+.signout-button:active,
+.signout-button:focus,
+.signout-button:focus-visible {
+    background-color: #FFFFFF; 
+    color: #E53935;
+    border: none;
+    outline: none;
+}
+
+.document-list, .document-details {
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #e53935 rgba(0, 0, 0, 0.1);
+}
+
+.document-list::-webkit-scrollbar, .document-details::-webkit-scrollbar {
+    width: 8px;
+}
+
+.document-list::-webkit-scrollbar-thumb, .document-details::-webkit-scrollbar-thumb {
+    background: #e53935;
+    border-radius: 4px;
+}
+
+.document-list {
+    flex: 0 0 32.5%;
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.10);
+}
+
+.document-details {
+    flex: 0 0 45%;
+    padding: 25px;
+    background-color: #FFFFFF;
+}

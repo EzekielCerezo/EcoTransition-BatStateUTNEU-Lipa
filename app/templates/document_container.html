@@ -1,0 +1,28 @@
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/document_container.css') }}" />
+{% endblock %}
+<div class="document-container">
+	<div class="upper-section">
+		<div class="picture-title">
+			<div class="uploader-pic">
+				<span class="material-symbols-outlined uploader-icon">person</span>
+			</div>
+			<div class="document-title">Sample Document Title</div>
+		</div>
+		<div class="document-status">
+			<span class="document-status-circle"></span>
+			<span class="document-status-text">Status</span>
+		</div>
+	</div>
+	<div class="lower-section">
+		<div class="uploader-details">
+			<span class="material-symbols-outlined uploader-icon">account_circle</span>
+			<span class="uploader-name">Sample Organization Name</span>
+		</div>
+		<div class="document-deadline">
+			<span class="material-symbols-outlined date-icon">event</span>
+			<span class="deadline-text">DEADLINE</span>
+			<span class="deadline-date">Sample Date</span>
+		</div>
+	</div>
+</div>
