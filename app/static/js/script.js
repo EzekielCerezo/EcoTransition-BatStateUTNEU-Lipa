@@ -30,3 +30,46 @@ document.addEventListener("DOMContentLoaded", () => {
 		togglePassword.classList.toggle("fa-eye-slash");
 	});
 });
+
+// Ensure the modal is hidden by default
+document.addEventListener("DOMContentLoaded", () => {
+	const modal = document.getElementById("forgotPasswordModal");
+	if (modal) {
+		modal.style.display = "none";
+		modal.classList.remove("show");
+	}
+});
+
+// Function to show the modal
+function showModal() {
+	const modal = document.getElementById("forgotPasswordModal");
+	const backdrop = document.createElement("div");
+	backdrop.className = "modal-backdrop fade show";
+
+	// Show the modal
+	if (modal) {
+		modal.style.display = "block";
+		modal.classList.add("show");
+	}
+
+	// Append the backdrop to the body
+	document.body.appendChild(backdrop);
+}
+
+// Function to close the modal
+function closeModal() {
+	const modal = document.getElementById("forgotPasswordModal");
+	const backdrop = document.querySelector(".modal-backdrop");
+
+	// Hide the modal
+	if (modal) {
+		modal.style.display = "none";
+		modal.classList.remove("show");
+	}
+
+	// Remove the backdrop
+	if (backdrop) {
+		backdrop.parentNode.removeChild(backdrop);
+	}
+}
+
