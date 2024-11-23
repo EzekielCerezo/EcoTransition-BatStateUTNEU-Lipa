@@ -176,44 +176,44 @@ hr {
 @media (max-width: 1439px) {
     
     .login-container {
-        width: 53.33%; /* Reduced from 100% */
-        max-width: 346.66px; /* Reduced from 650px */
+        width: 60%; /* Adjusted for width scaling */
+        max-width: 390px; /* Adjusted from 650px */
         background-color: #E53935 !important;
-        border-radius: 13.33px !important; /* Reduced from 25px */
-        box-shadow: 1.6px 1.6px 2.67px rgba(0, 0, 0, 0.5) !important; /* Reduced */
+        border-radius: 20px !important; /* Adjusted from 25px */
+        box-shadow: 2.4px 2.4px 4px rgba(0, 0, 0, 0.5) !important; /* Adjusted */
         color: white;
-        padding: 26.67px !important; /* Reduced from 50px */
+        padding: 40px !important; /* Adjusted from 50px */
     }
     
     .bsu-logo {
-        width: 66.66px; /* Reduced from 125px */
+        width: 75px; /* Adjusted from 125px */
         height: auto;
-        margin-bottom: 10.67px; /* Reduced from 20px */
+        margin-bottom: 16px; /* Adjusted from 20px */
     }
     
     .login-title {
-        font-size: 19.2px; /* Reduced from 36px */
+        font-size: 28.8px; /* Adjusted from 36px */
         font-weight: bold;
         margin: 0;
     }
     
     .login-subtitle {
-        font-size: 9.6px; /* Reduced from 18px */
-        margin-bottom: 10.67px; /* Reduced from 20px */
+        font-size: 14.4px; /* Adjusted from 18px */
+        margin-bottom: 16px; /* Adjusted from 20px */
     }
     
     .form-label {
-        font-size: 9.6px; /* Reduced from 18px */
+        font-size: 14.4px; /* Adjusted from 18px */
         font-weight: 500;
     }
     
     .form-control {
-        font-size: 8.53px; /* Reduced from 16px */
+        font-size: 12.8px; /* Adjusted from 16px */
         font-weight: 500;
-        padding: 5.33px 8px; /* Reduced from 10px 15px */
+        padding: 8px 12px; /* Adjusted from 10px 15px */
         background-color: transparent;
         color: #FFFFFF;
-        border: 1.07px solid #FFFFFF; /* Reduced from 2px */
+        border: 1.6px solid #FFFFFF; /* Adjusted from 2px */
         box-shadow: none;
         outline: none;
     }
@@ -227,37 +227,37 @@ hr {
         display: flex;
         justify-content: right;
         align-items: center;
-        margin-top: 5.33px !important; /* Reduced from 10px */
-        margin-bottom: 10.67px; /* Reduced from 20px */
+        margin-top: 8px !important; /* Adjusted from 10px */
+        margin-bottom: 16px; /* Adjusted from 20px */
     }
     
     .form-check-input {
-        width: 9.6px; /* Reduced from 18px */
-        height: 9.6px; /* Reduced from 18px */
-        margin-right: 2.67px; /* Reduced from 5px */
+        width: 12px; /* Adjusted from 18px */
+        height: 12px; /* Adjusted from 18px */
+        margin-right: 4px; /* Adjusted from 5px */
         cursor: pointer;
     }
     
     .form-check-label {
-        font-size: 7.47px; /* Reduced from 14px */
+        font-size: 11.2px; /* Adjusted from 14px */
         font-weight: 500;
     }
     
     .btn-primary, .btn-secondary {
-        width: 53.33%; /* Reduced from 100% */
-        height: 29.33px; /* Reduced from 55px */
+        width: 60%; /* Adjusted for width scaling */
+        height: 44px; /* Adjusted from 55px */
         background-color: #FFFFFF;
         color: #E53935;
         border: none;
-        border-radius: 26.67px; /* Reduced from 50px */
-        font-size: 9.6px; /* Reduced from 18px */
+        border-radius: 40px; /* Adjusted from 50px */
+        font-size: 14.4px; /* Adjusted from 18px */
         font-weight: bold;
-        padding: 6.4px; /* Reduced from 12px */
+        padding: 9.6px; /* Adjusted from 12px */
     }
     
     .btn-primary:hover, .btn-secondary:hover {
         background-color: transparent;
-        border: 1.07px solid #FFFFFF; /* Reduced from 2px */
+        border: 1.6px solid #FFFFFF; /* Adjusted from 2px */
     }
     
     .btn:focus {
@@ -266,14 +266,14 @@ hr {
     
     hr {
         border: none;
-        border-top: 1.07px solid #FFFFFF; /* Reduced from 2px */
+        border-top: 1.6px solid #FFFFFF; /* Adjusted from 2px */
         opacity: .75;
     }
     
     .mx-2.text-muted {
         color: #FFFFFF !important;
-        font-size: 7.47px; /* Reduced from 14px */
+        font-size: 11.2px; /* Adjusted from 14px */
     }
-
+    
 
 }
