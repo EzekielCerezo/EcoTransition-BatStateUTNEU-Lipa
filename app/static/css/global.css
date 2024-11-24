@@ -94,6 +94,10 @@ body {
     min-height: 480px;
 }
 
+.sign-up h1 {
+    font-size: 32px;
+}
+
 .container p {
     font-size: 14px;
     line-height: 20px;
@@ -203,21 +207,15 @@ body {
     }
 }
 
-/* Input container to position input and icon */
 .input-container {
     position: relative;
-    /* Ensures the icon is positioned relative to this container */
     width: 100%;
-    /* Matches the width of the input */
 }
 
 .input-container input {
     width: 100%;
-    /* Takes up the full width of the container */
     padding-right: 40px;
-    /* Add padding to make room for the icon */
     box-sizing: border-box;
-    /* Ensure padding doesn't affect total width */
     background-color: #eee;
     border: none;
     margin: 8px 0;
@@ -235,13 +233,9 @@ body {
 /* Show Password Icon */
 .toggle-password {
     position: absolute;
-    /* Position relative to the input-container */
     right: 15px;
-    /* Align to the right edge */
     top: 50%;
-    /* Vertically align in the middle */
     transform: translateY(-50%);
-    /* Adjust for centering */
     font-size: 12px;
     color: #999;
     cursor: pointer;
@@ -250,9 +244,19 @@ body {
 
 .toggle-password:hover {
     color: #333;
-    /* Slight color change on hover for interactivity */
 }
 
+.forgot-password {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #c05c5c;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+.forgot-password:hover {
+    color: #a82d2d;
+}
 
 /* Corrected 'toggle-container' */
 .toggle-container {
@@ -300,6 +304,10 @@ body {
     top: 0;
     transform: translateX(0);
     transition: all 0.6s ease-in-out;
+}
+
+.toggle-right h1 {
+    font-size: 32px;
 }
 
 .toggle-left {

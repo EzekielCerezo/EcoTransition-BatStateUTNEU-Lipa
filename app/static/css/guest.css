@@ -186,9 +186,81 @@
 
 @media (max-width: 1439px) {
     .container-fluid > .row {
-        display: flex;
-        flex-wrap: nowrap;
-        height: calc(100vh - 150px);
-        gap: 0;
+        height: calc(100vh - 120px);
+    }
+
+    .sidebar {
+        padding: 20px;
+    }
+
+    .guest-pic {
+        width: 80px;
+        height: 80px;
+        box-shadow: 0 1.6px 4px rgba(0, 0, 0, .15);
+    }
+
+    .profile-icon {
+        font-size: 60px;
+    }
+    
+    .guest-info {
+        margin-top: 8px;
+        margin-bottom: 16px;
+    }
+    
+    .guest-name {
+        font-size: 16px;
+    }
+    
+    .guest-id {
+        font-size: 12px;
+        margin-top: -4px;
+    }
+    
+    .menu {
+        height: 44px;
+        padding: 8px 12px;
+        border-radius: 8px;
+    }
+    
+    .document-icon {
+        font-size: 28px;
+        margin-right: 12px;
+    }
+    
+    .menu-label {
+        font-size: 16px;  
+    }
+    
+    .settings-button {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .settings-icon {
+        font-size: 24px;
+    }
+    
+    .signout-button {
+        height: 40px;
+        border-radius: 28px;
+        margin-left: 8px;
+        font-size: 14px;
+    }
+
+    .document-list::-webkit-scrollbar, .document-details::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .document-list::-webkit-scrollbar-thumb, .document-details::-webkit-scrollbar-thumb {
+        border-radius: 3px;
+    }
+
+    .document-list {
+        padding: 20px;
+    }
+
+    .document-details {
+        padding: 20px;
     }
 }

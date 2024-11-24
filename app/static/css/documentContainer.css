@@ -81,6 +81,7 @@
 .document-status-text {
     font-size: 12px;
     font-weight: 500;
+    white-space: nowrap;
     color: rgba(0, 0, 0, 0.25);
 }
 
@@ -95,10 +96,60 @@
 .deadline-date {
     font-size: 14px;
     font-weight: 500;
+    white-space: nowrap;
 }
 
 .deadline-text {
     font-size: 12px;
     color: rgba(0, 0, 0, 0.5);
     margin-right: 25px;
+}
+
+@media (max-width: 1439px) {
+    .document-container {
+        height: 100px;
+        border-radius: 8px;
+        margin-bottom: 12px;
+        padding: 12px;
+    }
+    
+    .uploader-pic {
+        width: 32px;
+        height: 32px;
+        margin-right: 12px;
+    }
+    
+    .uploader-icon {
+        font-size: 24px;
+    }
+    
+    .document-title {
+        font-size: 14px;
+    }
+    
+    .document-status-circle {
+        width: 6px;
+        height: 6px;
+        margin-right: 4px;
+    }
+    
+    .document-status-text {
+        font-size: 10px;
+    }
+    
+    .uploader-details .uploader-icon,
+    .date-icon {
+        font-size: 16px;
+        margin-right: 4px;
+    }
+    
+    .uploader-name,
+    .deadline-date {
+        font-size: 11px;
+    }
+    
+    .deadline-text {
+        font-size: 10px;
+        margin-right: 20px;
+    }
 }
