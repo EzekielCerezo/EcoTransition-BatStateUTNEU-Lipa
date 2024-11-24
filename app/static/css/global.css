@@ -7,12 +7,7 @@
 }
 
 body {
-    background-color: #c9d6ff;
-    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    background-color: #f8f9fa;
     height: 100vh;
 }
 
@@ -80,7 +75,15 @@ body {
 }
 
 /* Login Page Styles */
-.container {
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.login-container .container {
     background-color: #fff;
     border-radius: 150px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
@@ -314,17 +317,43 @@ body {
 
 .container.active .toggle-right {
     transform: translateX(200%);
-}
+}  
 
-.forgot-password {
-    display: block;
-    margin-top: 10px;
-    font-size: 14px;
-    color: #c05c5c;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-}
+@media (max-width: 1439px) {
+     .header {
+        height: 120px;
+    }
 
-.forgot-password:hover {
-    color: #a82d2d;
+    .header-logo {
+        height: 100px;
+        left: 12%;
+    }
+
+    .header-contents h1 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+    
+    .header-contents .subtitle {
+        font-size: 12px;
+        font-weight: 400;
+        margin-top: 0;
+        margin-bottom: -4px;
+    }
+    
+    .header-contents .campus {
+        font-size: 12px;
+        font-weight: 400;
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+    
+    .header-contents .portal {
+        font-size: 18px;
+        font-weight: 600; 
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
 }

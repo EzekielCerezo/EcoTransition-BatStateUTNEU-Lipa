@@ -183,3 +183,12 @@
     padding: 25px;
     background-color: #FFFFFF;
 }
+
+@media (max-width: 1439px) {
+    .container-fluid > .row {
+        display: flex;
+        flex-wrap: nowrap;
+        height: calc(100vh - 150px);
+        gap: 0;
+    }
+}
