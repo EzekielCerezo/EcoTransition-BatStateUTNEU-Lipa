@@ -1,66 +1,66 @@
 .modal-title {
-    font-size: 20px;
-    font-weight: bold;
+	font-size: 20px;
+	font-weight: bold;
 }
 
 .btn-close {
-    font-size: 10px; 
-    transition: opacity 0.2s ease;
+	font-size: 10px;
+	transition: opacity 0.2s ease;
 }
 
 .btn-close:hover {
-    opacity: 1;
+	opacity: 1;
 }
 
 .modal-body {
-    padding: 15px 25px 0;
+	padding: 15px 25px 0;
 }
 
 .form-group {
-    margin-bottom: 15px;
+	margin-bottom: 15px;
 }
 
 .form-control {
-    font-size: 14px;
+	font-size: 14px;
 }
 
 .form-label-group {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 10px;
 }
 
 .add-signatory-button {
-    background-color: transparent;
-    color: #E53935;
+	background-color: transparent;
+	color: #E53935;
     border: 1px solid #E53935;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+	border-radius: 5px;
+	padding: 5px 10px;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .add-signatory-button:hover,
 .add-signatory-button:active,
 .add-signatory-button:focus,
 .add-signatory-button:focus-visible {
-    background-color: #E53935;
+	background-color: #E53935;
     color: #FFFFFF;
-    outline: none;
-    box-shadow: none;
-} 
+	outline: none;
+	box-shadow: none;
+}
 
 .drop-area {
     background-color: #F9F9F9;
     border: dashed 2px #CCCCCC;
-    border-radius: 10px;
-    padding: 40px;
-    position: relative;
-    text-align: center;
-    transition: border-color 0.3s ease;
+	border-radius: 10px;
+	padding: 40px;
+	position: relative;
+	text-align: center;
+	transition: border-color 0.3s ease;
 }
 
 .drop-area.active-drop,
@@ -69,19 +69,19 @@
 }
 
 .drop-area.highlight {
-    background-color: #f0f0f0; 
-    border-color: #666; 
+	background-color: #f0f0f0;
+	border-color: #666;
 }
 
 .upload-icon {
-    color: #888888;
-    font-size: 40px;
+	color: #888888;
+	font-size: 40px;
 }
 
 .drop-text p {
-    margin: 5px 0;
-    color: #888888;
-    font-size: 16px;
+	margin: 5px 0;
+	color: #888888;
+	font-size: 16px;
 }
 
 .browse-file-button {
@@ -98,70 +98,69 @@
 .browse-file-button:active,
 .browse-file-button:focus,
 .browse-file-button:focus-visible {
-    background-color: transparent;
+	background-color: transparent;
     border: 1px solid #E53935;
     color: #E53935;
-    box-shadow: none;
+	box-shadow: none;
 }
 
 .file-list {
     border: 1px solid rgba(0, 0, 0, .1);
-    margin-top: 10px;
-    padding-right: 30px;
+	margin-top: 10px;
+	padding-right: 30px;
 }
 
 .file-entry {
-    position: relative;
-    background-color: #f3f3f3;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 5px 10px;
-    margin-top: 5px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    color: #333;
+	position: relative;
+	background-color: #f3f3f3;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 5px 10px;
+	margin-top: 5px;
+	font-size: 14px;
+	color: #333;
 }
 
 .signatory-remove-btn {
-    cursor: pointer;
-    background: none;
-    border: none;
+	cursor: pointer;
+	background: none;
+	border: none;
     color: #E53935;
-    font-size: 16px; 
-    position: absolute;
-    top: -10px; 
-    right: 2px; 
-    padding: 4px;
-    border-radius: 50%; 
-    line-height: 12px; 
-    display: none; 
+	font-size: 16px;
+	position: absolute;
+	top: -10px;
+	right: 2px;
+	padding: 4px;
+	border-radius: 50%;
+	line-height: 12px;
+	display: none;
 }
 
 .col-md-6:last-child .signatory-remove-btn {
-    display: block;
+	display: block;
 }
 
 .file-remove-btn {
-    position: absolute;
-    right: -35px; 
-    top: 50%;
-    transform: translateY(-50%); 
-    font-size: 20px; 
+	position: absolute;
+	right: -35px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 20px;
     color: #E53935;
 }
 
 .modal-footer {
-    padding-right: 0;
+	padding-right: 0;
 }
 
 .submit-button {
     background-color: #E53935;
     color: #FFFFFF;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 20px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+	border: none;
+	border-radius: 5px;
+	padding: 8px 20px;
+	font-size: 16px;
+	transition: background-color 0.3s ease;
 }
 
 .submit-button:hover,
@@ -170,7 +169,92 @@
 .submit-button:focus-visible {
     background-color: #c61d19; 
     color: #FFFFFF;
-    outline: none;
-    box-shadow: none;
+	outline: none;
+	box-shadow: none;
 }
 
+@media (max-width: 1439px) {
+	.modal-title {
+		font-size: 16px;
+	}
+
+	.btn-close {
+		font-size: 8px;
+	}
+
+	.modal-body {
+		padding: 12px 20px 0;
+	}
+
+	.form-group {
+		margin-bottom: 12px;
+	}
+
+	.form-control {
+		font-size: 11px;
+	}
+
+	.form-label-group {
+		margin-bottom: 8px;
+	}
+
+	.add-signatory-button {
+		border-radius: 4px;
+		padding: 4px 8px;
+		font-size: 11px;
+	}
+
+	.drop-area {
+		border-radius: 8px;
+		padding: 32px;
+	}
+
+	.upload-icon {
+		font-size: 32px;
+	}
+
+	.drop-text p {
+		margin: 4px 0;
+		font-size: 13px;
+	}
+
+	.browse-file-button {
+		border-radius: 4px;
+		padding: 4px 8px;
+		font-size: 11px;
+	}
+
+	.file-list {
+		margin-top: 8px;
+		padding-right: 24px;
+	}
+
+	.file-entry {
+		border-radius: 4px;
+		padding: 4px 8px;
+		margin-top: 4px;
+
+		font-size: 11px;
+	}
+
+	.signatory-remove-btn {
+		font-size: 13px;
+		top: -8px;
+		right: 2px;
+		padding: 3px;
+		line-height: 10px;
+	}
+
+	.file-remove-btn {
+		right: -28px;
+		top: 50%;
+		font-size: 16px;
+	}
+
+	.submit-button {
+		border-radius: 4px;
+		padding: 6px 16px;
+		font-size: 13px;
+		transition: background-color 0.3s ease;
+	}
+}
