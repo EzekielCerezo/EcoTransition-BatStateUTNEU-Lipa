@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<!-- Sidebar -->
+		{% include "sidebar.html" with context %}
+
+		<!-- Pre Loaded Sections for Documents Tab -->
+		<!-- Document List Section -->
+		<div class="document-list">{% include "documentList.html" %}</div>
+		<!-- Document Details Sections -->
+		<div class="document-details">{% include "documentDetails.html" %}</div>
+	</div>
+</div>
+
+<script src="{{ url_for('static', filename='js/guest.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<!-- Sidebar -->
+		{% include "sidebar.html" with context %}
+
+		<!-- Preloaded Sections -->
+
+		<!-- Student Organization Sub Menu Structure-->
+		<!-- Organization Accounts Section-->
+		<div class="organization-accounts d-none" id="organization-accounts">{% include "admin/organizationAccounts.html" %}</div>
+
+		<!-- Signatory Sub Menu Structure-->
+		<!-- Signatory Accounts Section-->
+		<div class="signatory-accounts d-none" id="signatory-accounts">{% include "admin/signatoryAccounts.html" %}</div>
+	</div>
+</div>
+
+<script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+{% endblock %}

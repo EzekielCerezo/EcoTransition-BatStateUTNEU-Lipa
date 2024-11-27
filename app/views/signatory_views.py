@@ -1,11 +1,16 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template
+from flask_login import login_required, current_user
 
-signatory_bp = Blueprint("signatory", __name__, template_folder="templates/signatory")
+signatory_bp = Blueprint(
+    "signatory", __name__, template_folder="../templates/signatory"
+)
 
 
-@signatory_bp.route("/dashboard", methods=["GET", "POST"])
+@signatory_bp.route("/", methods=["GET"])
+@login_required
 def dashboard():
-    if request.method == "POST":
-        # Example: Handle submitted organization data
-        pass
-    return render_template("signatory/dashboard.html")
+    if current_user.role.name != "Signatory":
+        return "Access Denied", 403
+    return render_template(
+        "signatory/signatory.html", role="signatory", user=current_user
+    )

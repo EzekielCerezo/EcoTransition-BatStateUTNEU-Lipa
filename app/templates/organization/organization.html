@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<!-- Sidebar -->
+		{% include "sidebar.html" with context %}
+
+		<!-- Documents Menu Structure -->
+		<!-- Documents List Section-->
+		<div class="document-list d-none" id="document-list">{% include "documentList.html" %}</div>
+		<!-- Documents Details Section-->
+		<div class="document-details d-none" id="document-details"></div>
+
+		<!-- Event Calendar Menu Structure -->
+		<!-- Events Calendar Section -->
+		<div class="events-calendar d-none" id="events-calendar">{% include "eventCalendar.html" %}</div>
+		<!-- Events Detail Section -->
+		<div class="events-detail d-none" id="events-detail">{% include "eventDetails.html" %}</div>
+
+		<!-- Event Analytics Menu Structure -->
+		<!-- Event Analytics Section -->
+		<div class="event-analytics d-none" id="event-analytics"></div>
+	</div>
+</div>
+
+<script src="{{ url_for('static', filename='js/organization.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,213 @@
+/* General Layout */
+.container-fluid > .row {
+	display: flex;
+	flex-wrap: nowrap;
+	height: calc(100vh - 150px);
+	gap: 0;
+}
+
+.organization-accounts,
+.signatory-accounts {
+	max-width: 77%;
+	padding: 20px; /* Balanced padding */
+}
+
+/* Content Section Styles */
+.content-section {
+	padding: 20px;
+	font-family: Arial, sans-serif;
+}
+
+.content-section h1 {
+	font-size: 22px; /* Match font size of first screenshot */
+	font-weight: bold; /* Bold text */
+	color: #000; /* Black text color */
+	margin-bottom: 5px; /* Adjust spacing below the header */
+}
+
+.content-section hr {
+	max-width: 100%;
+	border: none;
+	border-top: 1px solid #000; /* Match the thin black line in the first screenshot */
+	margin: 10px 0; /* Adjust spacing around the <hr> */
+}
+
+/* Shared Icons Layout */
+.content-section .icons-container {
+	display: flex;
+	justify-content: flex-start; /* Align icons to the left */
+	gap: 30px; /* Space between items */
+	flex-wrap: wrap; /* Allow wrapping if necessary */
+}
+
+.content-section .icon-item {
+	display: flex;
+	flex-direction: row; /* Align icon and text horizontally */
+	align-items: center; /* Vertically center icon and text */
+	justify-content: flex-start; /* Align items to the left */
+	gap: 8px; /* Space between the icon and the text */
+	font-size: 14px; /* Text size */
+	flex: 0 0 auto; /* Adjust width based on content */
+}
+
+/* Hover Effect for Icon Items */
+.content-section .icon-item:hover {
+	border-radius: 8px; /* Add rounded corners */
+}
+
+/* Hover Effect for Icon */
+.content-section .icon-item span {
+	font-size: 24px; /* Icon size */
+}
+
+.content-section .icon-item:hover span {
+	color: #a82d2d; /* Change icon color on hover */
+}
+
+/* Hover Effect for Text */
+.content-section .icon-item p {
+	margin: 0; /* Remove default margin */
+	font-size: 14px; /* Text size */
+}
+
+.content-section .icon-item:hover p {
+	color: #a82d2d; /* Change text color on hover */
+}
+
+/* Table Styles */
+.organization-table {
+	margin-top: 30px;
+	width: 100%;
+	border-collapse: collapse; /* Remove gaps between table cells */
+	text-align: left; /* Align text to the left */
+	font-size: 14px; /* Font size for table text */
+}
+
+/* Header Row */
+.organization-table thead tr {
+	border-bottom: 2px solid #ccc; /* Border separating header from body */
+}
+
+.organization-table thead th {
+	padding: 10px 15px; /* Padding inside header cells */
+	font-weight: bold;
+	text-align: left; /* Left-align header text */
+}
+
+/* Body Rows */
+.organization-table tbody tr {
+	border-bottom: 1px solid #ddd; /* Light border between rows */
+}
+
+.organization-table tbody tr:hover {
+	background-color: #f9f9f9; /* Slight background color change on hover */
+}
+
+.organization-table tbody td {
+	padding: 10px 15px; /* Padding inside table cells */
+	vertical-align: middle; /* Align content vertically in the middle */
+}
+
+/* Checkbox Alignment */
+.organization-table input[type="checkbox"] {
+	margin: 0;
+	transform: scale(1.2); /* Make checkboxes slightly larger */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.organization-table thead {
+		display: none; /* Hide table header on small screens */
+	}
+
+	.organization-table tbody tr {
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	.organization-table tbody td {
+		display: flex;
+		justify-content: space-between;
+		padding: 8px 10px;
+	}
+
+	.organization-table tbody td::before {
+		content: attr(data-label); /* Use data-label attribute for small screens */
+		font-weight: bold;
+		text-transform: capitalize;
+	}
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1439px) {
+	.container-fluid > .row {
+		height: calc(100vh - 120px); /* Adjust height for smaller screens */
+	}
+
+	.sidebar {
+		padding: 20px; /* Consistent padding for sidebar */
+	}
+
+	.guest-pic {
+		width: 80px; /* Smaller guest pic */
+		height: 80px;
+	}
+
+	.profile-icon {
+		font-size: 60px; /* Smaller icon */
+	}
+
+	.menu {
+		height: 44px;
+		padding: 8px 12px; /* Adjusted padding */
+	}
+
+	.document-icon {
+		font-size: 28px;
+		margin-right: 12px;
+	}
+
+	.menu-label {
+		font-size: 16px; /* Adjusted font size */
+	}
+
+	.settings-button {
+		width: 40px;
+		height: 40px;
+	}
+
+	.signout-button {
+		height: 40px;
+		border-radius: 28px;
+		font-size: 14px; /* Smaller button text */
+	}
+}
+
+@media (max-width: 768px) {
+	.content-section .icons-container {
+		justify-content: center; /* Center icons for smaller screens */
+	}
+
+	.content-section .icon-item {
+		flex: 0 0 100px; /* Reduce size of icons */
+	}
+
+	.content-section .icon-item span {
+		font-size: 24px; /* Smaller icons */
+	}
+
+	.content-section .icon-item p {
+		font-size: 12px; /* Smaller text size */
+	}
+}
+
+@media (max-width: 480px) {
+	.content-section .icon-item {
+		flex: 0 0 80px; /* Further reduce size for very small screens */
+		font-size: 12px; /* Smaller text size */
+	}
+
+	.content-section .icon-item span {
+		font-size: 20px; /* Smaller icon size */
+	}
+}

@@ -1,24 +1,37 @@
-{% block head %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/documentList.css') }}" />
-{% endblock %} {% include "documentModal.html" %}
+<div class="document-section" data-role="{{ role }}">
+	{% block head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/documentList.css') }}" />
+	{% endblock %}
+	<!-- Section Header -->
+	<div class="section-header">
+		<h2 class="section-title">Documents</h2>
+		<button class="btn btn-primary add-new-button" id="add-new-button" data-bs-toggle="modal" data-bs-target="#addDocumentModal">+ Add New</button>
+	</div>
 
-<div class="section-header">
-	<h2 class="section-title">Documents</h2>
-	<button class="btn btn-primary add-new-button">+ Add New</button>
+	<!-- Document Tabs (Role-Specific) -->
+	<div class="document-tabs">
+		<button class="tab active" id="tab-all" data-active="true">ALL</button>
+		{% if role in ["guest", "student_org"] %}
+		<button class="tab" id="tab-in-progress" data-active="false">IN PROGRESS</button>
+		<button class="tab" id="tab-completed" data-active="false">COMPLETED</button>
+		{% elif role == "signatory" %}
+		<button class="tab" id="tab-assigned" data-active="false">ASSIGNED</button>
+		<button class="tab" id="tab-completed" data-active="false">COMPLETED</button>
+		{% endif %}
+	</div>
+
+	<div class="line-separator"></div>
+
+	<!-- Search Bar -->
+	<div class="search-bar">
+		<span class="material-symbols-outlined search-icon">search</span>
+		<input type="text" placeholder="Search" />
+		<span class="material-symbols-outlined filter-icon">filter_list</span>
+	</div>
+
+	<!-- Document Entries -->
+	<div class="document-entries" id="document-entries">{% if has_documents %} {% for document in uploaded_documents %} {% include "documentContainer.html" %} {% endfor %} {% else %} {% include "noDocument.html" %} {% endif %}</div>
 </div>
 
-<div class="document-tabs">
-	<button class="tab" id="tab-all">ALL</button>
-	<button class="tab" id="tab-in-progress">IN PROGRESS</button>
-	<button class="tab" id="tab-completed">COMPLETED</button>
-</div>
-
-<div class="line-separator"></div>
-
-<div class="search-bar">
-	<span class="material-symbols-outlined search-icon">search</span>
-	<input type="text" placeholder="Search" />
-	<span class="material-symbols-outlined filter-icon">filter_list</span>
-</div>
-
-<div class="document-entries"></div>
+<!-- Include the Modal -->
+{% include "documentModal.html" %}

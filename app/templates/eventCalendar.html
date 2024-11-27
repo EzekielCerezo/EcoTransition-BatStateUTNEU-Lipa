@@ -1,0 +1,21 @@
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/eventsCalendar.css') }}" />
+{% endblock %}
+<div class="calendar-container">
+	<div class="calendar-header">
+		<button class="prev-month">&lt;</button>
+		<span class="month-year" id="monthYear"></span>
+		<button class="next-month">&gt;</button>
+	</div>
+	<div class="calendar-days">
+		<div class="day">SUN</div>
+		<div class="day">MON</div>
+		<div class="day">TUE</div>
+		<div class="day">WED</div>
+		<div class="day">THU</div>
+		<div class="day">FRI</div>
+		<div class="day">SAT</div>
+	</div>
+	<div class="calendar-dates" id="calendarDates"></div>
+</div>
+<script src="{{ url_for('static', filename='js/eventsCalendar.js') }}"></script>

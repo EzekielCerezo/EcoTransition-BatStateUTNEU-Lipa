@@ -1,0 +1,286 @@
+/* Sidebar Container */
+.sidebar {
+	flex: 0 0 22.5%;
+	padding: 25px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+}
+
+/* Profile Container */
+.profile-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.profile-picture {
+	width: 100px;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	background-color: #ffffff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+	overflow: hidden;
+	background-size: cover;
+	background-position: center;
+}
+
+.profile-icon {
+	font-size: 75px;
+	color: rgba(0, 0, 0, 0.25);
+}
+
+.profile-pic-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.profile-info {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.profile-name {
+	font-size: 24px;
+	font-weight: 600;
+	font-family: "Poppins", sans-serif;
+	color: #ffffff;
+	margin: 0;
+}
+
+.profile-detail {
+	font-size: 18px;
+	font-weight: 400;
+	font-family: "Poppins", sans-serif;
+	color: #e53935;
+	margin-top: -5px;
+}
+
+/* Menu Container */
+.menu-container {
+	flex-grow: 1;
+}
+
+/* Menu Items */
+.menu-item {
+	display: flex;
+	align-items: center;
+	height: 55px;
+	color: #ffffff;
+	padding: 10px 15px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	box-sizing: border-box;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.menu-item:hover,
+.menu-item:active,
+.menu-item:focus,
+.menu-item:focus-visible {
+	background-color: #ff4d4d;
+}
+
+.menu-item.active {
+	background-color: #ff4d4d;
+	color: white;
+}
+
+.menu-icon {
+	font-size: 35px;
+	margin-right: 15px;
+}
+
+.menu-label {
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.submenu {
+	display: none;
+	margin-left: 40px;
+	padding-left: 10px;
+	border-left: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.submenu-item {
+	color: #ffffff;
+	margin-bottom: 5px;
+	font-size: 16px;
+	font-weight: 500;
+	cursor: pointer;
+	position: relative;
+}
+
+.submenu:not(.d-none) {
+	display: block;
+}
+
+.submenu-item.active {
+	color: #ffffff;
+	position: relative;
+}
+
+.submenu-item.active::before {
+	content: "";
+	position: absolute;
+	left: -13px;
+	top: 0;
+	height: 100%;
+	width: 3px;
+	background-color: #e53935;
+	z-index: 2;
+	transition: top 0.3s ease;
+}
+
+.menu-container {
+	position: relative;
+	overflow: visible;
+}
+
+.button-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.settings-button {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #ffffff;
+	color: #ffa5a5;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.settings-icon {
+	font-size: 30px;
+}
+
+.settings-button:hover,
+.settings-button:active,
+.settings-button:focus,
+.settings-button:focus-visible {
+	background-color: #ff4d4d;
+	color: #ffffff;
+	outline: none;
+}
+
+.logout-button {
+	height: 50px;
+	flex-grow: 1;
+	border-radius: 35px;
+	background-color: #ff4d4d;
+	color: #ffffff;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 10px;
+	font-size: 18px;
+	font-weight: bold;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logout-button:hover,
+.logout-button:active,
+.logout-button:focus,
+.logout-button:focus-visible {
+	background-color: #ffffff;
+	color: #ffa5a5;
+	outline: none;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 1439px) {
+	.sidebar {
+		padding: 20px;
+	}
+
+	.profile-picture {
+		width: 80px;
+		height: 80px;
+		box-shadow: 0 1.6px 4px rgba(0, 0, 0, 0.15);
+	}
+
+	.profile-icon {
+		font-size: 60px;
+	}
+
+	.profile-info {
+		margin-top: 8px;
+		margin-bottom: 16px;
+	}
+
+	.profile-name {
+		font-size: 16px;
+	}
+
+	.profile-detail {
+		font-size: 12px;
+		margin-top: -4px;
+	}
+
+	.menu-item {
+		height: 44px;
+		padding: 8px 12px;
+		border-radius: 8px;
+	}
+
+	.menu-icon {
+		font-size: 28px;
+		margin-right: 12px;
+	}
+
+	.menu-label {
+		font-size: 16px;
+	}
+
+	.submenu {
+		margin-left: 32px;
+		padding-left: 8px;
+		border-left: 2px solid rgba(255, 255, 255, 0.3);
+	}
+
+	.submenu-item {
+		margin-bottom: 4px;
+		font-size: 13px;
+	}
+
+	.submenu-item.active::before {
+		left: -10px;
+		width: 2px;
+	}
+
+	.settings-button {
+		width: 40px;
+		height: 40px;
+	}
+
+	.settings-icon {
+		font-size: 24px;
+	}
+
+	.logout-button {
+		height: 40px;
+		border-radius: 28px;
+		margin-left: 8px;
+		font-size: 14px;
+	}
+}

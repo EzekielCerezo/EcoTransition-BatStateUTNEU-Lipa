@@ -1,0 +1,73 @@
+<div class="sidebar">
+	<!-- Profile Container -->
+	<div class="profile-container">
+		<div class="profile-picture">
+			<span class="material-symbols-outlined profile-icon">person</span>
+		</div>
+		<div class="profile-info">
+			<!-- Profile Name Placeholder -->
+			<div class="profile-name">{{ user_name | default("Username") }}</div>
+
+			<!-- Profile Detail Placeholder Based on Role -->
+			<div class="profile-detail">{% if role == "guest" %} {{ guest_id | default("GuestID") }} {% elif role == "admin" %} {{ user_role | default("User Role") }} {% elif role == "student_org" %} {{ organization_status | default("Academic Year") }} {% elif role == "signatory" %} {{ user_designation | default("User Designation") }} {% else %} Unknown Role {% endif %}</div>
+		</div>
+	</div>
+
+	<!-- Menu Container -->
+	<div class="menu-container">
+		{% if role == "guest" %}
+		<div class="menu-item" id="documentsMenu">
+			<span class="material-symbols-outlined menu-icon">draft</span>
+			<span class="menu-label">Documents</span>
+		</div>
+		{% elif role == "admin" %}
+		<div class="menu-container">
+			{% if role == "admin" %}
+			<div class="menu-item active" id="manageAccountMenu">
+				<span class="material-symbols-outlined menu-icon">manage_accounts</span>
+				<span class="menu-label">Manage Accounts</span>
+			</div>
+			<div class="submenu" id="manageAccountSubMenu">
+				<div class="submenu-item active" id="organizationAccountsMenu">Student Organizations</div>
+				<div class="submenu-item" id="signatoryAccountsMenu">Signatories</div>
+			</div>
+			{% endif %}
+		</div>
+		{% elif role == "student_org" %}
+		<div class="menu-item" id="documentsMenu">
+			<span class="material-symbols-outlined menu-icon">draft</span>
+			<span class="menu-label">Documents</span>
+		</div>
+		<div class="menu-item" id="eventCalendarMenu">
+			<span class="material-symbols-outlined menu-icon">event</span>
+			<span class="menu-label">Event Calendar</span>
+		</div>
+		<div class="menu-item" id="eventAnalyticsMenu">
+			<span class="material-symbols-outlined menu-icon">analytics</span>
+			<span class="menu-label">Event Analytics</span>
+		</div>
+		{% elif role == "signatory" %}
+		<div class="menu-item" id="documentsMenu">
+			<span class="material-symbols-outlined menu-icon">draft</span>
+			<span class="menu-label">Documents</span>
+		</div>
+		<div class="menu-item" id="eventCalendarMenu">
+			<span class="material-symbols-outlined menu-icon">event</span>
+			<span class="menu-label">Event Calendar</span>
+		</div>
+		{% else %}
+		<div class="menu-item" id="unknownRoleMenu">
+			<span class="material-symbols-outlined menu-icon">error</span>
+			<span class="menu-label">Unknown Role</span>
+		</div>
+		{% endif %}
+	</div>
+
+	<!-- Settings and Sign Out Buttons -->
+	<div class="button-container">
+		<button class="settings-button" data-bs-toggle="modal" data-bs-target="#settingsModal">
+			<span class="material-symbols-outlined button-icon">settings</span>
+		</button>
+		<button class="logout-button">SIGN OUT</button>
+	</div>
+</div>

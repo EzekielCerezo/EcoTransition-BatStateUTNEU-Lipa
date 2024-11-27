@@ -4,15 +4,37 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Eco Transition</title>
+
+		<!-- Global Styles -->
 		<link rel="stylesheet" href="/static/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}" />
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
 		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" rel="stylesheet" />
+
+		<!-- Role-Specific Styles -->
+		{% if role == "guest" %}
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/guest.css') }}" />
+		{% elif role == "student_org" %}
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/organization.css') }}" />
+		{% elif role == "admin" %}
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}" />
+		{% elif role == "signatory" %}
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/signatory.css') }}" />
+		{% endif %}
+
+		<!-- Sidebar Styles -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css') }}" />
+
 		{% block head %}{% endblock %}
 	</head>
-	<body>
+	<body data-role="{{ role | default('guest') }}">
+		<!-- Header -->
 		{% include "header.html" %}
+
+		<!-- Main Content -->
 		<div class="base-container-fluid">{% block content %}{% endblock %}</div>
+
+		<!-- Scripts -->
 		<script src="/static/js/bootstrap.bundle.min.js"></script>
 	</body>
 </html>

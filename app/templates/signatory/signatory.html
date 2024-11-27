@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/signatory.css') }}" />
+{% endblock %} {% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<!-- Sidebar -->
+		{% include "sidebar.html" with context %}
+
+		<div class="document-list d-none" id="document-list">{% include "documentList.html" %}</div>
+		<!-- Documents Details Section-->
+		<div class="document-details d-none" id="document-details">{% include "documentDetails.html" %}</div>
+
+		<!-- Event Calendar Menu Structure -->
+		<!-- Events Calendar Section -->
+		<div class="events-calendar d-none" id="events-calendar">{% include "eventCalendar.html" %}</div>
+		<!-- Events Detail Section -->
+		<div class="events-detail d-none" id="events-detail">{% include "eventDetails.html" %}</div>
+	</div>
+</div>
+<script src="{{ url_for('static', filename='js/signatory.js') }}"></script>
+{% endblock %}

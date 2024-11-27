@@ -1,0 +1,95 @@
+.calendar-container {
+	background-color: transparent; /* Transparent background */
+	color: white;
+	border-radius: 10px;
+	width: 100%;
+	height: 100%; /* Make the container take up 90% of the viewport height */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between; /* Ensure proper spacing between header and dates */
+	margin: 0 auto; /* Center horizontally */
+}
+
+.calendar-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 22px;
+	font-weight: bold; /* Slightly increase the font size for larger container */
+	margin-bottom: 20px;
+	color: #444; /* Use a darker color for better visibility */
+}
+
+button {
+	background-color: transparent;
+	border: none;
+	color: #444; /* Match the header color */
+	font-size: 22px; /* Match button size with header */
+	cursor: pointer;
+}
+
+button:hover {
+	color: #666; /* Subtle hover effect */
+}
+
+.calendar-days {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	margin-bottom: 10px;
+	font-weight: bold;
+	text-align: center;
+	font-size: 18px; /* Adjust font size of day labels */
+	color: #666; /* Subtle gray for day labels */
+}
+
+.day {
+	padding: 5px;
+}
+
+.calendar-dates {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	text-align: center;
+	gap: 5px;
+	flex: 1; /* Allow the dates to fill the remaining vertical space */
+}
+
+.date {
+	padding: 15px; /* Increase padding for larger clickable areas */
+	background-color: white;
+	color: #f06262;
+	border-radius: 5px;
+	font-weight: bold;
+	font-size: 18px; /* Adjust font size for readability */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.date:hover {
+	background-color: #ff7b7b;
+	color: white;
+	transform: scale(1.1);
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+}
+
+.date.active {
+	background-color: white;
+	color: #f06262;
+	border: 2px solid #f06262;
+}
+
+.date.inactive {
+	color: rgba(0, 0, 0, 0.4); /* Subtle dark gray text */
+	background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+	border: 1px solid rgba(0, 0, 0, 0.2); /* Subtle solid border */
+	box-shadow: none;
+}
+
+.date.inactive:hover {
+	transform: scale(1.05);
+	cursor: not-allowed;
+}

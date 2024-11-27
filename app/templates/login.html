@@ -12,29 +12,37 @@
 
 	<body>
 		{% include "forgotPasswordModal.html" %}
+
 		<div class="login-container">
 			<div class="container" id="container">
+				<!-- Continue as Guest -->
 				<div class="sign-up">
-					<form>
+					<form id="guest-form" method="POST" action="/auth/guest-continue">
 						<h1>Continue as Guest</h1>
 						<span>Enter your email to receive login credentials</span>
-						<input type="email" placeholder="Email" required />
-						<button type="button">Send</button>
+						<input type="email" name="email" id="guest-email" placeholder="Email" required />
+						<div id="guest-error" class="form-feedback"></div>
+						<button type="submit">Send</button>
 					</form>
 				</div>
+
+				<!-- Sign In -->
 				<div class="sign-in">
-					<form>
+					<form method="POST" action="/auth/" onsubmit="logSubmit(event)">
 						<h1>Sign In</h1>
 						<span>Please enter your login credentials</span>
-						<input type="email" placeholder="Email" required />
+						<!-- Change name="username" to name="email" -->
+						<input type="text" name="email" placeholder="Email" required />
 						<div class="input-container">
-							<input type="password" id="password" placeholder="Password" required />
+							<input type="password" name="password" id="password" placeholder="Password" required />
 							<i class="fa fa-eye-slash toggle-password" id="toggle-password"></i>
 						</div>
 						<a href="#" class="forgot-password" onclick="showForgotPasswordModal()">Forgot password?</a>
-						<button type="button">Sign In</button>
+						<button type="submit">Sign In</button>
 					</form>
 				</div>
+
+				<!-- Toggle Panel -->
 				<div class="toggle-container">
 					<div class="toggle">
 						<div class="toggle-panel toggle-left">
@@ -51,7 +59,9 @@
 				</div>
 			</div>
 		</div>
-		<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+		<!-- Include Scripts -->
+		<script src="{{ url_for('static', filename='js/login.js') }}"></script>
 		<script src="/static/js/bootstrap.bundle.min.js"></script>
 	</body>
 </html>

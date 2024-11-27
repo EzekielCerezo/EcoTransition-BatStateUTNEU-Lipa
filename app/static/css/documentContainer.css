@@ -1,155 +1,188 @@
 .document-container {
-    width: 100%;
-    height: 125px;
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+	width: 100%;
+	height: 125px;
+	background-color: #ffffff;
+	border-radius: 10px;
+	margin-bottom: 15px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 15px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
 }
 
 .document-container:hover,
 .document-container:active,
 .document-container:focus,
 .document-container:focus-visible {
-    background-color: #FFCDD2;
+	background-color: #ffcdd2;
 }
 
-
-.upper-section, .lower-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.upper-section,
+.lower-section {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .picture-title,
-.document-status, 
+.document-status,
 .uploader-details,
 .document-deadline {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .uploader-pic {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #F3F3F3;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .15);
-    background-size: cover;
-    background-position: center;
-    margin-right: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #f3f3f3;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+	background-size: cover;
+	background-position: center;
+	margin-right: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
 }
 
 .uploader-icon {
-    font-size: 30px;
-    color: rgba(0, 0, 0, 0.25);
+	font-size: 30px;
+	color: rgba(0, 0, 0, 0.25);
 }
 
 .profile-pic-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 50%;
 }
 
 .document-title {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    color: #000000;
-    flex-grow: 1;
+	font-family: "Poppins", sans-serif;
+	font-weight: 600;
+	font-size: 18px;
+	color: #000000;
+	flex-grow: 1;
 }
 
 .document-status-circle {
-    background-color: rgba(0, 0, 0, 0.25);
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    margin-right: 5px;
+	background-color: rgba(0, 0, 0, 0.25);
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	margin-right: 5px;
 }
 
 .document-status-text {
-    font-size: 12px;
-    font-weight: 500;
-    white-space: nowrap;
-    color: rgba(0, 0, 0, 0.25);
+	font-size: 12px;
+	font-weight: 500;
+	white-space: nowrap;
+	color: rgba(0, 0, 0, 0.25);
 }
 
 .uploader-details .uploader-icon,
 .date-icon {
-    font-size: 20px;
-    color: rgba(0, 0, 0, 0.5);
-    margin-right: 5px;
+	font-size: 20px;
+	color: rgba(0, 0, 0, 0.5);
+	margin-right: 5px;
 }
 
 .uploader-name,
 .deadline-date {
-    font-size: 14px;
-    font-weight: 500;
-    white-space: nowrap;
+	font-size: 14px;
+	font-weight: 500;
+	white-space: nowrap;
 }
 
 .deadline-text {
-    font-size: 12px;
-    color: rgba(0, 0, 0, 0.5);
-    margin-right: 25px;
+	font-size: 12px;
+	color: rgba(0, 0, 0, 0.5);
+	margin-right: 25px;
+}
+
+/* Status Colors */
+.document-container.in-progress {
+	border-left: 5px solid green;
+}
+
+.document-container.approved {
+	border-left: 5px solid blue;
+}
+
+.document-container.disapproved {
+	border-left: 5px solid red;
+}
+
+.document-status-circle.in-progress {
+	background-color: green;
+}
+
+.document-status-circle.approved {
+	background-color: blue;
+}
+
+.document-status-circle.disapproved {
+	background-color: red;
+}
+
+/* Force uppercase for status text */
+.document-status-text {
+	text-transform: uppercase; /* Enforce ALL CAPS */
+	font-size: 12px;
+	font-weight: 500;
+	color: rgba(0, 0, 0, 0.25);
 }
 
 @media (max-width: 1439px) {
-    .document-container {
-        height: 100px;
-        border-radius: 8px;
-        margin-bottom: 12px;
-        padding: 12px;
-    }
-    
-    .uploader-pic {
-        width: 32px;
-        height: 32px;
-        margin-right: 12px;
-    }
-    
-    .uploader-icon {
-        font-size: 24px;
-    }
-    
-    .document-title {
-        font-size: 14px;
-    }
-    
-    .document-status-circle {
-        width: 6px;
-        height: 6px;
-        margin-right: 4px;
-    }
-    
-    .document-status-text {
-        font-size: 10px;
-    }
-    
-    .uploader-details .uploader-icon,
-    .date-icon {
-        font-size: 16px;
-        margin-right: 4px;
-    }
-    
-    .uploader-name,
-    .deadline-date {
-        font-size: 11px;
-    }
-    
-    .deadline-text {
-        font-size: 10px;
-        margin-right: 20px;
-    }
+	.document-container {
+		height: 100px;
+		border-radius: 8px;
+		margin-bottom: 12px;
+		padding: 12px;
+	}
+
+	.uploader-pic {
+		width: 32px;
+		height: 32px;
+		margin-right: 12px;
+	}
+
+	.uploader-icon {
+		font-size: 24px;
+	}
+
+	.document-title {
+		font-size: 14px;
+	}
+
+	.document-status-circle {
+		width: 6px;
+		height: 6px;
+		margin-right: 4px;
+	}
+
+	.document-status-text {
+		font-size: 10px;
+	}
+
+	.uploader-details .uploader-icon,
+	.date-icon {
+		font-size: 16px;
+		margin-right: 4px;
+	}
+
+	.uploader-name,
+	.deadline-date {
+		font-size: 11px;
+	}
+
+	.deadline-text {
+		font-size: 10px;
+		margin-right: 20px;
+	}
 }
