@@ -1,6 +1,7 @@
 from datetime import datetime
 from flask_login import UserMixin
 from . import db
+from sqlalchemy.dialects.postgresql import JSONB
 
 
 class Role(db.Model):
@@ -21,12 +22,16 @@ class User(UserMixin, db.Model):
         db.Integer, db.ForeignKey("roles.id"), nullable=False
     )  # Link to Role
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    updated_at = db.Column(
+        db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow
+    )
 
     # Relationships
     signatory = db.relationship("Signatory", backref="user", uselist=False)
     student_organization = db.relationship(
         "StudentOrganization", backref="user", uselist=False
     )
+    guest = db.relationship("Guest", backref="user", uselist=False)
 
 
 # Admin Table (Only One Admin)
@@ -49,7 +54,7 @@ class Signatory(db.Model):
     department = db.Column(db.String(150), nullable=False)
 
     # Relationships
-    approvals = db.relationship("Approval", backref="signatory", lazy=True)
+    approvals = db.relationship("DocumentApproval", backref="signatory", lazy=True)
     organizations = db.relationship(
         "StudentOrganization",
         backref="adviser",
@@ -93,14 +98,9 @@ class StudentOrganization(db.Model):
 class Guest(db.Model):
     __tablename__ = "guests"
     id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    temporary_password = db.Column(db.String(200), nullable=False)
-    recognition_paper = db.Column(
-        db.String(200), nullable=True
-    )  # Path to uploaded recognition paper
-    certificate = db.Column(
-        db.String(200), nullable=True
-    )  # Path to recognition certificate
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    expiration_date = db.Column(db.DateTime, nullable=False)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
 
 # Documents Table
@@ -115,20 +115,42 @@ class Document(db.Model):
     )
 
     # Relationships
-    approvals = db.relationship("Approval", backref="document", lazy=True)
+    approvals = db.relationship("DocumentApproval", backref="document", lazy=True)
+    versions = db.relationship("DocumentVersion", backref="document", lazy=True)
 
 
-# Approvals Table (For Document Approvals by Signatories)
-class Approval(db.Model):
-    __tablename__ = "approvals"
+# Document Version Table
+class DocumentVersion(db.Model):
+    __tablename__ = "document_versions"
     id = db.Column(db.Integer, primary_key=True)
     document_id = db.Column(db.Integer, db.ForeignKey("documents.id"), nullable=False)
+    version_number = db.Column(db.Integer, nullable=False)
+    file = db.Column(db.LargeBinary, nullable=False)
+    uploaded_by = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    uploaded_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+    # Relationships
+    approval = db.relationship(
+        "DocumentApproval", backref="document_version", uselist=False
+    )
+
+
+# Document Approval Table (For Document Approvals by Signatories)
+class DocumentApproval(db.Model):
+    __tablename__ = "document_approvals"
+    id = db.Column(db.Integer, primary_key=True)
+    document_id = db.Column(db.Integer, db.ForeignKey("documents.id"), nullable=False)
+    version_id = db.Column(
+        db.Integer, db.ForeignKey("document_versions.id"), nullable=False
+    )
     signatory_id = db.Column(
         db.Integer, db.ForeignKey("signatories.id"), nullable=False
     )
-    status = db.Column(db.String(50), nullable=False)  # Approved, Rejected
-    remarks = db.Column(db.Text, nullable=True)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    approval_status = db.Column(
+        db.String(50), nullable=False
+    )  # Pending, Approved, Disapproved
+    comment = db.Column(db.Text, nullable=True)
+    approval_date = db.Column(db.DateTime, default=datetime.utcnow)
 
 
 # Events Table
@@ -141,6 +163,25 @@ class Event(db.Model):
     organization_id = db.Column(
         db.Integer, db.ForeignKey("student_organizations.id"), nullable=False
     )
+    created_by = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    updated_at = db.Column(
+        db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow
+    )
+
+    # Relationships
+    event_dates = db.relationship("EventDate", backref="event", lazy=True)
+
+
+# Event Dates Table
+class EventDate(db.Model):
+    __tablename__ = "event_dates"
+    id = db.Column(db.Integer, primary_key=True)
+    event_id = db.Column(db.Integer, db.ForeignKey("events.id"), nullable=False)
+    event_date = db.Column(db.Date, nullable=False)
+    start_time = db.Column(db.Time, nullable=False)
+    end_time = db.Column(db.Time, nullable=False)
+    venue = db.Column(db.String(255), nullable=False)
 
 
 # Event Analytics Table
@@ -158,3 +199,44 @@ class EventAnalytics(db.Model):
         db.Text, nullable=True
     )  # JSON or text result of analysis
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+    # Use JSONB from PostgreSQL dialect
+    sentiment_analysis = db.Column(JSONB, nullable=True)
+    descriptive_analysis = db.Column(JSONB, nullable=True)
+
+
+# Comments Table (For Signatory Comments on Documents)
+class Comment(db.Model):
+    __tablename__ = "comments"
+    id = db.Column(db.Integer, primary_key=True)
+    document_id = db.Column(db.Integer, db.ForeignKey("documents.id"), nullable=False)
+    signatory_id = db.Column(
+        db.Integer, db.ForeignKey("signatories.id"), nullable=False
+    )
+    comment_text = db.Column(db.Text, nullable=False)
+    comment_date = db.Column(db.DateTime, default=datetime.utcnow)
+
+
+# Audit Log Table
+class AuditLog(db.Model):
+    __tablename__ = "audit_logs"
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    document_id = db.Column(db.Integer, db.ForeignKey("documents.id"), nullable=False)
+    action = db.Column(
+        db.String(50), nullable=False
+    )  # Viewed, Approved, Commented, etc.
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+    description = db.Column(db.Text, nullable=True)
+
+
+# Student Organization - Signatory Relation Table
+class StudentOrganizationSignatoryRelation(db.Model):
+    __tablename__ = "student_organization_signatory_relations"
+    id = db.Column(db.Integer, primary_key=True)
+    organization_id = db.Column(
+        db.Integer, db.ForeignKey("student_organizations.id"), nullable=False
+    )
+    signatory_id = db.Column(
+        db.Integer, db.ForeignKey("signatories.id"), nullable=False
+    )
