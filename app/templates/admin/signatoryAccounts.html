@@ -1,28 +1,6 @@
-<div id="facultyAdministratorSection" class="content-section">
-	<h1>Faculty Administrator</h1>
-	<hr class="custom-hr" />
-	<div class="icons-container">
-		<!-- Add User Button -->
-		<div class="icon-item" id="addUserButton">
-			<span class="material-symbols-outlined">group_add</span>
-			<p>Add User</p>
-		</div>
-		<!-- Delete User Button -->
-		<div class="icon-item" id="deleteUserButton">
-			<span class="material-symbols-outlined">group_remove</span>
-			<p>Delete User</p>
-		</div>
-		<!-- Edit User Button -->
-		<div class="icon-item" id="editUserButton">
-			<span class="material-symbols-outlined">edit_document</span>
-			<p>Edit User</p>
-		</div>
-		<!-- Reset Password Button -->
-		<div class="icon-item" id="resetPasswordButton">
-			<span class="material-symbols-outlined">key_vertical</span>
-			<p>Reset Password</p>
-		</div>
-	</div>
+{% set title = "Faculty Administrator" %}
+{% include "admin/sectionHeader.html" %}
+
 	<div class="table-container">
 		<table class="organization-table">
 			<thead>
