@@ -1,0 +1,41 @@
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/signatoryAccountsModal.css') }}" />
+{% endblock %}
+
+<div id="addSignatoryModal" class="modal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Add Signatory Account</h5>
+				<button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form id="addSignatoryForm">
+					<div class="form-group">
+						<label for="orgName">Organization Name</label>
+						<input type="text" id="orgName" name="orgName" class="form-control" placeholder="Enter Organization Name" required />
+					</div>
+					<div class="form-group">
+						<label for="abbr">Abbreviation</label>
+						<input type="text" id="abbr" name="abbr" class="form-control" placeholder="Enter Abbreviation" required />
+					</div>
+					<div class="form-group">
+						<label for="department">Department</label>
+						<input type="text" id="department" name="department" class="form-control" placeholder="Enter Department" required />
+					</div>
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" required />
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" id="password" name="password" class="form-control" placeholder="Enter Password" required />
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn submit-button">Add Signatory</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

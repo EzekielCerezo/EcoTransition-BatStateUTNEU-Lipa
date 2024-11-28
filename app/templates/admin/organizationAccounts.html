@@ -1,52 +1,30 @@
-{% include "admin/addOrganizationModal.html" %}
+{% include "admin/addOrganizationModal.html" %} {% set title = "Student Organization" %} {% include "admin/sectionHeader.html" %}
 
-<div id="studentOrganizationSection" class="content-section">
-	<h1>Student Organization</h1>
-	<hr class="custom-hr" />
-	<div class="icons-container">
-		<div class="icon-item" id="addUserIcon">
-			<span class="material-symbols-outlined">group_add</span>
-			<p>Add User</p>
-		</div>
-		<div class="icon-item">
-			<span class="material-symbols-outlined">group_remove</span>
-			<p>Delete User</p>
-		</div>
-		<div class="icon-item">
-			<span class="material-symbols-outlined">edit_document</span>
-			<p>Edit User</p>
-		</div>
-		<div class="icon-item">
-			<span class="material-symbols-outlined"> key_vertical </span>
-			<p>Reset Password</p>
-		</div>
-	</div>
-	<div class="table-container">
-		<table class="organization-table">
-			<thead>
-				<tr>
-					<th><input type="checkbox" /></th>
-					<th>Organization Name</th>
-					<th>Abbreviation</th>
-					<th>Department</th>
-					<th>Email</th>
-					<th>Status</th>
-				</tr>
-			</thead>
-			<tbody>
-				{% for org in organizations %}
-				<tr>
-					<td><input type="checkbox" /></td>
-					<td>{{ org.org_name }}</td>
-					<td>{{ org.org_abbr }}</td>
-					<td>{{ org.org_dept }}</td>
-					<td>{{ org.org_email }}</td>
-					<td>{{ org.org_status }}</td>
-				</tr>
-				{% endfor %}
-			</tbody>
-		</table>
-	</div>
+<div class="table-container">
+	<table class="organization-table">
+		<thead>
+			<tr>
+				<th><input type="checkbox" /></th>
+				<th>Organization Name</th>
+				<th>Abbreviation</th>
+				<th>Department</th>
+				<th>Email</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for org in organizations %}
+			<tr>
+				<td><input type="checkbox" /></td>
+				<td>{{ org.org_name }}</td>
+				<td>{{ org.org_abbr }}</td>
+				<td>{{ org.org_dept }}</td>
+				<td>{{ org.org_email }}</td>
+				<td>{{ org.org_status }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
 </div>
-<div id="overlay" class="overlay"></div>
+
 <script src="{{ url_for('static', filename='js/addOrganizationModal.js') }}"></script>
